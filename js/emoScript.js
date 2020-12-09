@@ -1,5 +1,8 @@
 console.log('animation.js Load');
-
+notYet();
+function notYet(){
+    alert("OME는 현재 구현중에 있습니다. 또한 크롬브라우저에서 제일 잘 보여지게 제작되었습니다.");
+}
 /*헤더 영역 */
 const header = document.querySelector('header');
 const logoIcon = document.querySelector('.logo-icon');
@@ -235,11 +238,29 @@ function inputClick(e){
 
 function onClickLoginStart(e){
     e.preventDefault();
-    localStorage.name = loginName.value;
-    localStorage.storage;
-    console.log(localStorage.name + " : 값 start");
-    checkStart();
-    startColorSet();
+    if(loginName.classList.contains("onInput") && loginName.value.length > 0){
+        localStorage.name = loginName.value;
+        localStorage.storage;
+        console.log(localStorage.name + " : 값 start");
+        checkStart();
+        startColorSet();
+    }
+    else{ /* 감정 입력 방지 */
+        loginName.value = "이름 또는 닉네임을 입력해주세요.";
+        loginName.classList.add("outInput");
+        loginName.classList.remove("onInput");
+        loginName.style.transition = "all 0.2s";
+        loginName.style.border = "1px solid #000000";
+        setTimeout(function(){
+            loginName.style.border = "1px solid #EEEEEE";
+        },200);
+        setTimeout(function(){
+            loginName.style.border = "1px solid #000000";
+        },400);
+        setTimeout(function(){
+            loginName.style.border = "1px solid #EEEEEE";
+        },600);
+    }
 }
 //컬러세팅
 function startColorSet(){
@@ -459,7 +480,7 @@ function homeRendering(){
             console.log("eI : " + eICheck);
         }
     }
-    eIRnkArray = eIArray.sort().reverse();
+    // eIRnkArray = eIArray.sort().reverse();
     // for(let j = 0;j<eIArray.length;j++){
     //     if(eIArray[i] < eIArray[j]){
     //         // eIRnkArray[i]++;
@@ -469,8 +490,8 @@ function homeRendering(){
     console.log("ranking : " + eIRnkArray);
     // console.log("eIMany : " + eIMany);
     homeManyFunction();
-    graphFunction();
     homeRandomRendering();
+    graphFunction();
 }
 function homeManyFunction(){
     homeManyHowmany.innerHTML = '<span class="home-many-howmany-display">' + eICheck + '</span>/' + sTL;
@@ -548,7 +569,9 @@ function homeManyFunction(){
 function graphFunction(){
     let percentEI = 0;
     let graphHeight = 0;
+    
     for(let i = 0;i<homeGraphNum.length;i++){
+        console.log("eIArray : " + eIArray);
         homeGraphNum[i].innerText = eIArray[i];
         percentEI = Math.round((eIArray[i] / sTL) * 100);
         graphHeight = (eIArray[i] / sTL * 140);
