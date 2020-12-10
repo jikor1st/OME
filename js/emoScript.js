@@ -41,6 +41,8 @@ const homeGraphPercent = document.querySelectorAll('.home-graph-percent');
 
 const homeRankDisplayNone = document.querySelector('.home-rank-display-none');
 const homeRankEl = document.querySelectorAll('.home-rank-el');
+const homeRankEmo = document.querySelectorAll('.home-rank-emo');
+const homeRankEmoImg = document.querySelectorAll('.home-rank-emo > img');
 /*  */
 const homeCustomInformButton = document.querySelector('.home-custom-inform-button');
 
@@ -99,6 +101,14 @@ let eI3L = emoIcon3.length;
 let eI4L = emoIcon4.length;
 let eI5L = emoIcon5.length;
 let eIArray = [eI0L, eI1L, eI2L, eI3L, eI4L, eI5L];
+let eIRnkArray = [
+    {iconId : 0, iconLength : eI0L, iconColor : '#F94B58'},
+    {iconId : 1, iconLength : eI1L, iconColor : '#6AE29E'},
+    {iconId : 2, iconLength : eI2L, iconColor : '#3ECEE5'},
+    {iconId : 3, iconLength : eI3L, iconColor : '#F7E221'},
+    {iconId : 4, iconLength : eI4L, iconColor : '#FFA4D2'},
+    {iconId : 5, iconLength : eI5L, iconColor : '#FCA651'}
+]
 /*시간 불러오기 */
 let date = new Date();
 let RMonth = null;
@@ -147,7 +157,9 @@ let loginLogoTimer = null;
 let LogoTimer = null;
 
 /*기능호출 */
+let checkVisibleBool = false;
 function checkVisible(c){
+    if(checkVisibleBool){return};
     if(c.classList.contains('outVisible')){
         c.classList.toggle('outVisible');
         c.style.transition = "all 0.4s linear";
@@ -155,6 +167,9 @@ function checkVisible(c){
         c.classList.toggle('outVisible');
         c.style.transition = "all 0.25s linear";
     }
+    setTimeout(function(){
+        checkVisibleBool = false;
+    },405);
 }
 function checkInput(t){
     if(t.classList.contains('outInput')){
@@ -465,9 +480,16 @@ function homeRendering(){
     eI4L = emoIcon4.length;
     eI5L = emoIcon5.length;
     eIArray = [eI0L, eI1L, eI2L, eI3L, eI4L, eI5L];
-    eIRnkArray = new Array();
-    console.log(eIArray);
-
+    eIRnkArray = [
+        {iconId : 0, iconLength : eI0L, iconColor : '#F94B58'},
+        {iconId : 1, iconLength : eI1L, iconColor : '#6AE29E'},
+        {iconId : 2, iconLength : eI2L, iconColor : '#3ECEE5'},
+        {iconId : 3, iconLength : eI3L, iconColor : '#F7E221'},
+        {iconId : 4, iconLength : eI4L, iconColor : '#FFA4D2'},
+        {iconId : 5, iconLength : eI5L, iconColor : '#FCA651'}
+    ]
+    // eIRnkArray = Array.prototype.slice.call(eIRnkArray);
+    console.log(eIRnkArray[3].iconLength);
     // eICheck = 제일 많은감정 갯수
     // eIMany = 제일 많은감정 순서
 
@@ -480,18 +502,14 @@ function homeRendering(){
             console.log("eI : " + eICheck);
         }
     }
-    // eIRnkArray = eIArray.sort().reverse();
-    // for(let j = 0;j<eIArray.length;j++){
-    //     if(eIArray[i] < eIArray[j]){
-    //         // eIRnkArray[i]++;
-    //         eIRnkArray.push(eICheck);
-    //     }
-    // }
-    console.log("ranking : " + eIRnkArray);
-    // console.log("eIMany : " + eIMany);
+    let srt = "iconLength";
+    eIRnkArray.sort(function(a, b){
+        return b[srt] - a[srt];
+    });
     homeManyFunction();
     homeRandomRendering();
     graphFunction();
+    rakingFunction();
 }
 function homeManyFunction(){
     homeManyHowmany.innerHTML = '<span class="home-many-howmany-display">' + eICheck + '</span>/' + sTL;
@@ -590,7 +608,18 @@ function graphFunction(){
     }
 }
 function rakingFunction(){
-
+    for(let i = 0;i<eIRnkArray.length;i++){
+        if(eIRnkArray[i].iconLength <= 0){
+            homeRankEmo[i].style.visibility = "hidden";
+        }
+        else if(eIRnkArray[i].iconLength > 0){
+            homeRankEmo[i].style.visibility = "visible";
+            homeRankEmo[i].style.backgroundColor = eIRnkArray[i].iconColor;
+            homeRankEmoImg[i].src = "./asset/icon/moving/icon" + eIRnkArray[i].iconId + "/icon" + eIRnkArray[i].iconId + "_000.png";
+        }
+        
+        
+    }
 }
 /*그날의 감정을 떠올려요 기능 */
 function homeRandomRendering(){
@@ -673,6 +702,7 @@ function setSliderBackground(){
 function onRecordExitBtn(e){
     e.preventDefault();
     checkVisible(recordSection);
+    checkVisibleBool = true;
     resetRecordInput(recordTextInput);
 }
 function resetRecordInput(c){
@@ -796,6 +826,7 @@ function onRecordBtn(e){
     /*글 안 적었을 때 입력 방지 */
     if(recordTextInput.classList.contains("onInput")){
         checkVisible(recordSection);
+        checkVisibleBool = true;
         setTimeout(function(){
             resetRecordInput(recordTextInput);
         },400);
@@ -871,19 +902,21 @@ function onRecordBtn(e){
 /*follow inner 세팅 */
 function followArraySet(){
     // 감정이 1개이상 기록이 되었을때.
-    followStorageArea.innerHTML = localStorage.storage;
-    if(followStorageArea.childNodes.length > 0){
-        for(let i = 0;i < followStorageArea.childNodes.length;i++){
-            //팔로우 아닌것들 삭제기능
-            if(followStorageArea.childNodes[i].childNodes[0].classList.contains("not-follow")){
-                // console.log(followStorageArea.childNodes[i].childNodes[0].parentNode);
-                followStorageArea.childNodes[i].childNodes[0].parentNode.remove();
-            }
-            // if(followStorageArea.childNodes[i].childNodes[3]){
-            //     followStorageArea.childNodes[i].childNodes[3].remove();
-            // }
-            // console.log(followStorageArea.childNodes[i].childNodes[3]);
+    // followStorageArea.innerHTML = localStorage.storage;
+    followStorageArea.innerHTML = storageArea.innerHTML;
+    for(let i = 0;i < followStorageArea.childNodes.length;i++){
+        //팔로우 아닌것들 삭제기능
+        if(followStorageArea.childNodes[i].childNodes[0].classList.contains("not-follow")){
+            // console.log(followStorageArea.childNodes[i].childNodes[0].parentNode);
+            followStorageArea.childNodes[i].childNodes[0].parentNode.remove();
         }
+        // if(followStorageArea.childNodes[i].childNodes[3]){
+        //     followStorageArea.childNodes[i].childNodes[3].remove();
+        // }
+        // console.log(followStorageArea.childNodes[i].childNodes[3]);
+    }
+    if(followStorageArea.childNodes.length > 0){
+        
     }
 }
 /*storage 컨트롤 영역 */
@@ -949,6 +982,7 @@ function onNavCustomBtn(e){
 function oncustomExitBtn(e){
     e.preventDefault();
     checkVisible(customSection);
+    checkVisibleBool = true;
 }
 
 /*감정 커스텀 선택영역 */
@@ -1267,6 +1301,7 @@ function customColorSetting(){
 function onSettingExitBtn(e){
     e.preventDefault();
     checkVisible(settingSection);
+    checkVisibleBool = true;
 }
 function onSettingResetFirst(e){
     e.preventDefault();
@@ -1375,6 +1410,7 @@ function loadAll(){
     homeRendering();
     homeRandomRendering();
     emoPeriod();
+    followArraySet();
 }
 
 loadAll();
