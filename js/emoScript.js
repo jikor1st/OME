@@ -900,25 +900,25 @@ function onRecordBtn(e){
     emoPeriod();
 }
 /*follow inner 세팅 */
-function followArraySet(){
-    // 감정이 1개이상 기록이 되었을때.
-    // followStorageArea.innerHTML = localStorage.storage;
-    followStorageArea.innerHTML = storageArea.innerHTML;
-    for(let i = 0;i < followStorageArea.childNodes.length;i++){
-        //팔로우 아닌것들 삭제기능
-        if(followStorageArea.childNodes[i].childNodes[0].classList.contains("not-follow")){
-            // console.log(followStorageArea.childNodes[i].childNodes[0].parentNode);
-            followStorageArea.childNodes[i].childNodes[0].parentNode.remove();
-        }
-        // if(followStorageArea.childNodes[i].childNodes[3]){
-        //     followStorageArea.childNodes[i].childNodes[3].remove();
-        // }
-        // console.log(followStorageArea.childNodes[i].childNodes[3]);
-    }
-    if(followStorageArea.childNodes.length > 0){
+// function followArraySet(){
+//     // 감정이 1개이상 기록이 되었을때.
+//     // followStorageArea.innerHTML = localStorage.storage;
+//     followStorageArea.innerHTML = storageArea.innerHTML;
+//     for(let i = 0;i < followStorageArea.childNodes.length;i++){
+//         //팔로우 아닌것들 삭제기능
+//         if(followStorageArea.childNodes[i].childNodes[0].classList.contains("not-follow")){
+//             // console.log(followStorageArea.childNodes[i].childNodes[0].parentNode);
+//             followStorageArea.childNodes[i].childNodes[0].parentNode.remove();
+//         }
+//         // if(followStorageArea.childNodes[i].childNodes[3]){
+//         //     followStorageArea.childNodes[i].childNodes[3].remove();
+//         // }
+//         // console.log(followStorageArea.childNodes[i].childNodes[3]);
+//     }
+//     if(followStorageArea.childNodes.length > 0){
         
-    }
-}
+//     }
+// }
 /*storage 컨트롤 영역 */
 function onStorageSeeBtn(e){
     e.preventDefault();
@@ -969,7 +969,7 @@ function onEmoRecordFollow(e){
     //     emoRecordFollow[i].addEventListener('click', onEmoRecordFollow);
     // }
     localStorage.storage = storageArea.innerHTML;
-    followArraySet();
+    // followArraySet();
 }
 
 /*감정 커스텀 영역 */
@@ -1345,7 +1345,7 @@ function addEvent(){
     homeManyDisplayAddRecord.addEventListener('click', onHomeManyDisplayAddRecord);
     homeCustomInformButton.addEventListener('click', onHomeCustomInformButton);
 
-    storageSeeBtn.addEventListener('click', onStorageSeeBtn);
+    // storageSeeBtn.addEventListener('click', onStorageSeeBtn);
 
     recordExitBtn.addEventListener('click', onRecordExitBtn);
     recordTextInput.addEventListener('click', onRecordTextInput);
@@ -1410,7 +1410,7 @@ function loadAll(){
     homeRendering();
     homeRandomRendering();
     emoPeriod();
-    followArraySet();
+    // followArraySet();
 }
 
 loadAll();
