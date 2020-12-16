@@ -148,6 +148,16 @@ section{
     height:calc(100vh - 80px);
     overflow-y:scroll;
 }
+.home-section::-webkit-scrollbar{
+    width:6px;
+}
+.home-section::-webkit-scrollbar-track{
+    background-color:#F3F3F3
+}
+.home-section::-webkit-scrollbar-thumb{
+    background-color:#D9D9D9;
+    border-radius:100px;
+}
 .home-area{
     width:calc(45vw - 12vw);
     /* padding:0 12vw; */
@@ -1143,7 +1153,7 @@ section{
         margin-top:13vh;
     }
     .home-graph-con{
-        width:65%;
+        width:65%;height:auto;
     }
     .home-rank-title{
         margin-left:3vw;
@@ -1154,6 +1164,7 @@ section{
     .home-rank-area{
         margin-left:3vw;
         width:70%;
+        height:auto;
     }
     .home-rank-el{display:flex;align-items: center;width:10%;padding:18px 3%;justify-content: space-between;}
     .home-right-bottom-con{
@@ -1176,7 +1187,7 @@ section{
         bottom:5vw;
     }
     .home-graph-con{
-        width:100%;
+        width:100%;height:auto;
     }
     .home-stats-area{
         height:auto;
@@ -1190,6 +1201,7 @@ section{
     .home-rank-area{
         margin-left:0;
         width:100%;
+        height:auto;
     }
 }
 @media screen and (max-width : 1280px){
@@ -1214,23 +1226,25 @@ section{
     .home-many-con{
         width:fit-content;
         margin:0 auto;
+        height:auto;
     }
     .home-stats-con{
-        width:92%;
+        width:92%;height:auto;
     }
     .home-stats-area{
-        width:100%;
+        width:100%;height:auto;
     }
     .home-right-bottom-con{
         width:100%;
         align-items: center;
+        height:auto;
     }
     .home-rank-area{
         margin-top:3.5%;
     }
     .home-rank-el{display:flex;align-items: center;width:10%;padding:30px 3%;justify-content: space-between;}
     .home-random-emo{
-        width:100%;
+        width:100%;height:auto;
     }
     .home-random-emo .emo{
         width:100%;

@@ -1,8 +1,4 @@
 console.log('animation.js Load');
-notYet();
-function notYet(){
-    alert("OME는 현재 구현중에 있습니다. 또한 크롬브라우저에서 제일 잘 보여지게 제작되었습니다.");
-}
 /*헤더 영역 */
 const header = document.querySelector('header');
 const logoIcon = document.querySelector('.logo-icon');
@@ -236,13 +232,20 @@ function onNavStorageBtn(e){
 
 /* 텍스트상자 클릭시 이벤트 호출 */
 function onLoginName(e){
-    e.preventDefault();
+    // e.preventDefault();
     if(e.type === "click"){
         inputClick(this);
     }
     if(e.type === "input"){
         console.log(this.value);
         loginNameLimit.innerText = this.value.length;
+    }
+    if(e.type === "keydown"){
+        console.log(e.which);
+        if(e.which === 13){
+            console.log("버튼눌림");
+            loginInputFuntion();
+        }
     }
 }
 
@@ -253,6 +256,12 @@ function inputClick(e){
 
 function onClickLoginStart(e){
     e.preventDefault();
+    if(e.type === "click"){
+        loginInputFuntion();      
+    }
+}
+
+function loginInputFuntion(){
     if(loginName.classList.contains("onInput") && loginName.value.length > 0){
         localStorage.name = loginName.value;
         localStorage.storage;
@@ -771,7 +780,6 @@ function emoInMotion(){
         homeManyIconConImage.src = './asset/icon/moving/icon' + eIMany + '/icon' + eIMany + '_0' + emoInM01 + emoInM02 + '.png';
         recordNowIconImage.src = './asset/icon/moving/icon' + recordIndex + '/icon' + recordIndex + '_0' + emoInM01 + emoInM02 + '.png';
         customNowIconImage.src = './asset/icon/moving/icon' + customIndex + '/icon' + customIndex + '_0' + emoInM01 + emoInM02 + '.png';
-        
     },48); 
 }
 /*감정기록 슬라이더*/
@@ -991,7 +999,6 @@ function oncustomIconCon(e){
     let elel = e.currentTarget;
     customIndex = customIconCon.indexOf(elel);
     console.log(customIndex);
-    
     if(!customIcon[customIndex].classList.contains('custom-icon-selected')){
         for(let i = 0;i < customIcon.length;i++){
             customIcon[i].classList.remove('custom-icon-selected');
@@ -1337,6 +1344,7 @@ function addEvent(){
     loginName.addEventListener('click', onLoginName);
     loginName.addEventListener('input', onLoginName);
     loginStart.addEventListener('click', onClickLoginStart);
+    loginName.addEventListener('keydown', onLoginName);
 
     navStorageBtn.addEventListener('click', onNavStorageBtn);
     emoPlusBtn.addEventListener('click', onEmoPlusBtn);
@@ -1396,8 +1404,8 @@ function addEvent(){
     customExitBtn.addEventListener('click', oncustomExitBtn);
 }
 function setting(){
-    recordIcon[0].style.backgroundColor = localStorage.color00;
-    customIcon[0].style.backgroundColor = localStorage.color00;
+    // recordIcon[0].style.backgroundColor = localStorage.color00;
+    // customIcon[0].style.backgroundColor = localStorage.color00;
     customColorSetting();
     settingName();
 }
