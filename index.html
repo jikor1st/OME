@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1, user-scalable=yes, initial-scale=1.0">
+    <title>OME와 감정기록</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./asset/logo/favicon.png"/>
+    <link rel="stylesheet" href="./css/import.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer type="text/javascript" src="./js/emoScript.js"></script>
+    <script defer type="text/javascript" src="./js/script.js"></script>
+</head>
+<body>
+    <div id="allWrap">
+        <header class="outVisible">
+            <nav>
+                <h1 class="header-logo">
+                    <a href="./index.html" title="OME" target="_self">
+                        <figure class="header-logo-con">
+                            <img class="logo-icon" src="./asset/icon/static/icon0.png" alt="logo" height="30"/>
+                            <img class="logo-me" src="./asset/logo/logo_me.png" alt="logo" height="30"/>
+                        </figure>
+                    </a>
+                </h1>
+                <button class="emo-plus-btn"><span class="emo-plus-btn-plus">+</span><span class="emo-plus-btn-text">감정 기록</span></button>
+                <ul class="header-nav">
+                    <li class="nav-el"><a href="./index.html" title="_self">홈</a></li>
+                    <li class="nav-el nav-storage-button"><a href="#" title="_self">감정 창고</a></li>
+                    <li class="nav-el nav-custom-button"><a href="#" title="_self">커스텀</a></li>
+                    <li class="nav-el nav-setting-button"><a href="#" title="_self"><img src="./asset/icon/setting.png" alt="설정" width="25.72" height="23.1"/></a></li>
+                </ul> 
+            </nav>
+        </header>
+        <main>
+            <section class="login-section">
+                <article class="login-background">
+                    <img class="login-background-cloud" src="./asset/background/cloud.png" alt="logo" height="60"/>
+                    <img class="login-background-cloud" src="./asset/background/cloud.png" alt="logo" height="50"/>
+                    <img class="login-background-cloud" src="./asset/background/cloud.png" alt="logo" height="60"/>
+                    <img class="login-background-cloud" src="./asset/background/cloud.png" alt="logo" height="50"/>
+                    <img class="login-background-cloud" src="./asset/background/cloud.png" alt="logo" height="60"/>
+                    <img class="login-background-cloud" src="./asset/background/cloud.png" alt="logo" height="50"/>
+                </article>
+                <article class="login-area">
+                    <p class="login-service">감정을 기록해볼까요?</p>
+                    <div class="login-logo-con">
+                        <figure class="login-logo">
+                            <img class="login-logo-icon" src="./asset/icon/static/icon0.png" alt="logo" height="54"/>
+                            <img class="login-logo-me" src="./asset/logo/logo_me.png" alt="logo" height="54"/>
+                        </figure>
+                        <h2 class="login-logo-text">에 옴~</h2>
+                    </div>
+                    <input class="login-name outInput" type="text" nam="id_name" value="이름또는 닉네임을 입력해주세요." spellcheck="false" maxlength="5" size="5">
+                    <p class="login-name-limit-text"><span class="login-name-limit">0</span> / 5자</p>
+                    <button class="login-start">시작하기</button>
+                </article>
+            </section>
+            <section class="home-section outVisible">
+                <article class="home-area">
+                    <h2 class="home-title">
+                        <p>
+                            오늘도
+                            <figure>
+                                <img class="home-icon" src="./asset/icon/static/icon0.png" alt="logo" height="30"/>
+                                <img class="logo-me" src="./asset/logo/logo_me.png" alt="logo" height="30"/>
+                            </figure>
+                            와
+                        </p>
+                        <p>
+                            함께 감정을 기록하세요
+                        </p>
+                    </h2>
+                    <div class="home-many-con">
+                        <p class="home-many-oh">오!</p>
+                        <div class="home-many-icon-section">
+                            <div class="home-many-particle-con">
+                                <!--파티클-->
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="home-many-icon-area">
+                                <div class="home-many-icon-shadow">그림자</div>
+                                <img class="home-many-icon-arm" src="./asset/icon/movement/emovement03.png" alt="팔다리" width="146" height=""/>
+                                <div class="home-many-icon-con">
+                                    <img class="home-many-icon" src="./asset/icon/moving/icon3/icon3_000.png" alt="눈코입" width="107" height="107"/>
+                                </div>
+                            </div>
+                            <p class="home-many-display-con">
+                                <span class="home-many-display-name">지기역</span> 님은</br>
+                                <span class="home-many-display-emo">기쁜날</span>이 많아요!
+                            </p>
+                            <div class="home-many-display-none-con">
+                                <p class="home-many-display-none">아직 기록된 감정이 없어요</p>
+                                <button class="home-many-display-addRecord"><span>+ </span>감정 기록하기</button>
+                            </div>
+                        <p class="home-many-howmany"><span class="home-many-howmany-display">24</span>/80</p>
+                    </div>
+                    </div>
+                </article>
+                <article class="home-stats-con">
+                    <div class="home-stats-area">
+                        <!--감정통계-->
+                        <div class="home-stats-title-con">
+                            <h3 class="home-stats-title">감정 통계</h3>
+                            <p class="home-stats-period">2020.11.09 ~ 2020.12.22</p>
+                        </div>
+                        <div class="home-stats">
+                            <div class="home-graph-con">
+                                <h4 class="home-graph-title">감정 그래프</h4>
+                                <div class="home-graph-display">
+                                    <div class="home-graph-explain-con">
+                                        <p class="home-graph-emo-title">감정</p>
+                                        <p class="home-graph-num-title">갯수</p>
+                                    </div>
+                                    <div class="home-graph-stats">
+                                        <div class="home-graph">
+                                            <p class="home-graph-percent hgpt00">13%</p>
+                                            <div class="home-graph-percentbar-con">
+                                                <div class="home-graph-percentbar-background"></div>
+                                                <div class="home-graph-percentbar hgpb00"></div>
+                                                <div class="home-graph-percent-emo hgpe00">
+                                                    <img class="home-graph-percent-emo-m" src="./asset/icon/moving/icon0/icon0_000.png" alt="감정표정" width="20" height="20"/>
+                                                </div>
+                                            </div>
+                                            <p class="home-graph-num">12</p>
+                                        </div>
+                                        <div class="home-graph">
+                                            <p class="home-graph-percent hgpt01">13%</p>
+                                            <div class="home-graph-percentbar-con">
+                                                <div class="home-graph-percentbar-background"></div>
+                                                <div class="home-graph-percentbar hgpb01"></div>
+                                                <div class="home-graph-percent-emo hgpe01">
+                                                    <img class="home-graph-percent-emo-m" src="./asset/icon/moving/icon1/icon1_000.png" alt="감정표정" width="20" height="20"/>
+                                                </div>
+                                            </div>
+                                            <p class="home-graph-num">12</p>
+                                        </div>
+                                        <div class="home-graph">
+                                            <p class="home-graph-percent hgpt02">13%</p>
+                                            <div class="home-graph-percentbar-con">
+                                                <div class="home-graph-percentbar-background"></div>
+                                                <div class="home-graph-percentbar hgpb02"></div>
+                                                <div class="home-graph-percent-emo hgpe02">
+                                                    <img class="home-graph-percent-emo-m" src="./asset/icon/moving/icon2/icon2_000.png" alt="감정표정" width="20" height="20"/>
+                                                </div>
+                                            </div>
+                                            <p class="home-graph-num">12</p>
+                                        </div>
+                                        <div class="home-graph">
+                                            <p class="home-graph-percent hgpt03">13%</p>
+                                            <div class="home-graph-percentbar-con">
+                                                <div class="home-graph-percentbar-background"></div>
+                                                <div class="home-graph-percentbar hgpb03"></div>
+                                                <div class="home-graph-percent-emo hgpe03">
+                                                    <img class="home-graph-percent-emo-m" src="./asset/icon/moving/icon3/icon3_000.png" alt="감정표정" width="20" height="20"/>
+                                                </div>
+                                            </div>
+                                            <p class="home-graph-num">12</p>
+                                        </div>
+                                        <div class="home-graph">
+                                            <p class="home-graph-percent hgpt04">13%</p>
+                                            <div class="home-graph-percentbar-con">
+                                                <div class="home-graph-percentbar-background"></div>
+                                                <div class="home-graph-percentbar hgpb04"></div>
+                                                <div class="home-graph-percent-emo hgpe04">
+                                                    <img class="home-graph-percent-emo-m" src="./asset/icon/moving/icon4/icon4_000.png" alt="감정표정" width="20" height="20"/>
+                                                </div>
+                                            </div>
+                                            <p class="home-graph-num">12</p>
+                                        </div>
+                                        <div class="home-graph">
+                                            <p class="home-graph-percent hgpt05">13%</p>
+                                            <div class="home-graph-percentbar-con">
+                                                <div class="home-graph-percentbar-background"></div>
+                                                <div class="home-graph-percentbar hgpb05"></div>
+                                                <div class="home-graph-percent-emo hgpe05">
+                                                    <img class="home-graph-percent-emo-m" src="./asset/icon/moving/icon5/icon5_000.png" alt="감정표정" width="20" height="20"/>
+                                                </div>
+                                            </div>
+                                            <p class="home-graph-num">12</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="home-rank-con">
+                                <h4 class="home-rank-title">감정 순위</h4>
+                                <div class="home-rank-area">
+                                    <p class="home-rank-display-none">아직 기록된 감정이 없어요</p>
+                                    <div class="home-rank-el">
+                                        <p class="home-rank-ranktext">1위</p>
+                                        <div class="home-rank-emo">
+                                            <img src="./asset/icon/moving/icon0/icon0_000.png" alt="아이콘이미지" width="20" height="20" />
+                                        </div>
+                                    </div>
+                                    <div class="home-rank-el">
+                                        <p class="home-rank-ranktext">2위</p>
+                                        <div class="home-rank-emo">
+                                            <img src="./asset/icon/moving/icon1/icon1_000.png" alt="아이콘이미지" width="20" height="20" />
+                                        </div>
+                                    </div>
+                                    <div class="home-rank-el">
+                                        <p class="home-rank-ranktext">3위</p>
+                                        <div class="home-rank-emo">
+                                            <img src="./asset/icon/moving/icon2/icon2_000.png" alt="아이콘이미지" width="20" height="20" />
+                                        </div>
+                                    </div>
+                                    <div class="home-rank-el">
+                                        <p class="home-rank-ranktext">4위</p>
+                                        <div class="home-rank-emo">
+                                            <img src="./asset/icon/moving/icon3/icon3_000.png" alt="아이콘이미지" width="20" height="20" />
+                                        </div>
+                                    </div>
+                                    <div class="home-rank-el">
+                                        <p class="home-rank-ranktext">5위</p>
+                                        <div class="home-rank-emo">
+                                            <img src="./asset/icon/moving/icon4/icon4_000.png" alt="아이콘이미지" width="20" height="20" />
+                                        </div>
+                                    </div>
+                                    <div class="home-rank-el">
+                                        <p class="home-rank-ranktext">6위</p>
+                                        <div class="home-rank-emo">
+                                            <img src="./asset/icon/moving/icon5/icon5_000.png" alt="아이콘이미지" width="20" height="20" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-right-bottom-con">
+                        <div class="home-random-emo">
+                            <!--그날의 감정을 떠올려요-->
+                            <div class="emo">
+                                <div class="emo-when-con">
+                                    <div class="home-random-title-con">
+                                        <p class="home-random-title">그날의 감정을 떠올려요</p>
+                                        <p class="home-random-subtitle">무작위로 가져온 감정이에요</p>
+                                    </div>
+                                    <div class="emo-when">
+                                        <p class="emo-date"><span class="emo-year">2020</span>.<span class="emo-month">11</span>.<span class="emo-day">05</span></p>
+                                        <p class="emo-time"><span class="emo-hour">19</span>:<span class="emo-minutes">10</span></p>
+                                    </div>
+                                </div>
+                                <div class="emo-record">            
+                                    <div class="emo-record-in">
+                                        <div class="emo-icon">
+                                            <img class="emo-icon-in" src="./asset/icon/static/icon1.png" alt="감정표정" width="55" height="55"/>
+                                        </div>
+                                        <div class="emo-inform">
+                                            <p class="emo-degree">매우 우울해</p>
+                                            <p class="emo-text">
+                                                오늘은 비가와서 폴킴의 비라는 노래를 들었다. 그래서 어쩌과다
+                                                거리가시 과고바가 다고차디.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="home-custom-con">
+                            <!--감정들을 커스텀해봐요-->
+                            <div class="home-cutom-background-con">
+                                <img class="home-custom-background-cloud" src="./asset/background/cloud.png" alt="cloud" height="27"/>
+                                <img class="home-custom-background-cloud" src="./asset/background/cloud.png" alt="cloud" height="27"/>
+                                <img class="home-custom-background-cloud" src="./asset/background/cloud.png" alt="cloud" height="27"/>
+                            </div>
+                            <div class="home-custom-area">
+                                <img class="home-custom-ground" src="./asset/background/ground.png" alt="땅" width="400"/>
+                                <div class="home-custom-icon-area">
+                                    <div class="home-custom-icon hgpe05">
+                                        <div class="home-custom-icon-shadow">그림자</div>
+                                        <img class="home-custom-icon-arm" src="./asset/icon/movement/emovement05.png" alt="팔다리" width="29" height="17"/>
+                                        <div class="home-custom-icon-con">
+                                            <!--5아이콘-->
+                                            <img src="./asset/icon/moving/icon5/icon5_000.png" alt="눈코입" width="32" height="32"/>
+                                        </div>
+                                    </div>
+                                    <div class="home-custom-icon hgpe04">
+                                        <div class="home-custom-icon-shadow">그림자</div>
+                                        <img class="home-custom-icon-arm" src="./asset/icon/movement/emovement04.png" alt="팔다리" width="29" height="17"/>
+                                        <div class="home-custom-icon-con">
+                                            <!--4아이콘-->
+                                            <img src="./asset/icon/moving/icon4/icon4_000.png" alt="눈코입" width="32" height="32"/>
+                                        </div>
+                                    </div>
+                                    <div class="home-custom-icon hgpe03">
+                                        <div class="home-custom-icon-shadow">그림자</div>
+                                        <img class="home-custom-icon-arm" src="./asset/icon/movement/emovement03.png" alt="팔다리" width="42" height="37"/>
+                                        <div class="home-custom-icon-con">
+                                            <!--3아이콘-->
+                                            <img src="./asset/icon/moving/icon3/icon3_000.png" alt="눈코입" width="32" height="32"/>
+                                        </div>
+                                    </div>
+                                    <div class="home-custom-icon hgpe00">
+                                        <div class="home-custom-icon-shadow">그림자</div>
+                                        <img class="home-custom-icon-arm" src="./asset/icon/movement/emovement00.png" alt="팔다리" width="35" height="20"/>
+                                        <div class="home-custom-icon-con">
+                                            <!--0아이콘-->
+                                            <img src="./asset/icon/moving/icon0/icon0_000.png" alt="눈코입" width="32" height="32"/>
+                                        </div>
+                                    </div>
+                                    <div class="home-custom-icon hgpe01">
+                                        <div class="home-custom-icon-shadow">그림자</div>
+                                        <img class="home-custom-icon-arm" src="./asset/icon/movement/emovement01.png" alt="팔다리" width="29" height="17"/>
+                                        <div class="home-custom-icon-con">
+                                            <!--1아이콘-->
+                                            <img src="./asset/icon/moving/icon1/icon1_000.png" alt="눈코입" width="32" height="32"/>
+                                        </div>
+                                    </div>
+                                    <div class="home-custom-icon hgpe02">
+                                        <div class="home-custom-icon-shadow">그림자</div>
+                                        <img class="home-custom-icon-arm" src="./asset/icon/movement/emovement02.png" alt="팔다리" width="29" height="24"/>
+                                        <div class="home-custom-icon-con">
+                                            <!--2아이콘-->
+                                            <img src="./asset/icon/moving/icon2/icon2_000.png" alt="눈코입" width="32" height="32"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="home-custom-inform-con">
+                                <h4 class="home-custom-inform-title">감정들을 커스텀해봐요</h4>
+                                <p class="home-custom-inform-subtitle">감정들의 색을 바꿀수 있어요</p>
+                                <button class="home-custom-inform-button">커스텀하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <section class="storage-section outVisible">
+                <div class="storage-top">
+                    <div class="storage-title-con">
+                        <h2 class="storage-title">감정창고</h2>
+                        <p class="storage-long">2020.11.09 ~ 2020.12.22</p>
+                    </div>
+                    <!-- <button class="storage-see">
+                        <div class="storage-input">
+                            <div class="storage-input-back"></div>
+                            <div class="storage-input-inform">
+                                <p class="storage-input-all">모두</p>
+                                <img class="storage-input-follow" src="./asset/icon/not_follow.png" alt="하트" width="21.01" height="18.06"/>
+                            </div>
+                        </div>
+                    </button> -->
+                </div>
+                <article class="storage-area">
+                </article>
+                <!-- <article class="follow-storage-area outVisible">
+                </article> -->
+                <!-- <div class="emo">
+                        <div class="emo-when">
+                            <p class="emo-date"><span class="emo-year">2020</span>.<span class="emo-month">11</span>.<span class="emo-day">05</span></p>
+                            <p class="emo-time"><span class="emo-hour">19</span>:<span class="emo-minutes">10</span></p>
+                        </div>
+                        <div class="emo-record">
+                            <button class="emo-record-follow not-follow"><img src="./asset/icon/not_follow.png" alt="팔로우" width="30" height="25.79"/></button>
+                            <div class="emo-record-in">
+                                <div class="emo-icon">
+                                    <img class="emo-icon-in" src="./asset/icon/static/icon1.png" alt="감정표정" width="55" height="55"/>
+                                </div>
+                                <div class="emo-inform">
+                                    <p class="emo-degree">매우 우울해</p>
+                                    <p class="emo-text">
+                                        오늘은 비가와서 폴킴의 비라는 노래를 들었다. 그래서 어쩌과다
+                                        거리가시 과고바가 다고차디.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="emo-remove-btn"><img src="./asset/icon/trash.png" alt="삭제" width="11.51"/></button>
+                        <div class="emo-bar"></div>
+                    </div> -->
+            </section>
+            <section class="record-section outVisible">
+                <article class="record-area">
+                    <button class="record-exit-btn">
+                        <div class="record-exit-el"></div>
+                        <div class="record-exit-el"></div>
+                    </button>
+                    <h3 class="record-area-title">현재 나의 <span>감정</span>을 선택해요</h3>
+                    <div class="record-choose-con">
+                        <div class="record-icon-con">
+                            <div class="record-icon record-icon-selected">
+                                <img src="./asset/icon/moving/icon0/icon0_000.png" alt="화남 아이콘" width="43" height="43"/>
+                            </div>
+                            <p class="record-icon-p record-icon-p-selected">화나요</p>
+                        </div>
+                        <div class="record-icon-con">
+                            <div class="record-icon">
+                                <img src="./asset/icon/moving/icon1/icon1_000.png" alt="우울 아이콘" width="43" height="43"/>
+                            </div>
+                            <p class="record-icon-p">우울해</p>
+                        </div>
+                        <div class="record-icon-con">
+                            <div class="record-icon">
+                                <img src="./asset/icon/moving/icon2/icon2_000.png" alt="슬픔 아이콘" width="43" height="43"/>
+                            </div>
+                            <p class="record-icon-p">슬퍼요</p>
+                        </div>
+                        <div class="record-icon-con">
+                            <div class="record-icon">
+                                <img src="./asset/icon/moving/icon3/icon3_000.png" alt="기쁨 아이콘" width="43" height="43"/>
+                            </div>
+                            <p class="record-icon-p">기뻐요</p>
+                        </div>
+                        <div class="record-icon-con">
+                            <div class="record-icon">
+                                <img src="./asset/icon/moving/icon4/icon4_000.png" alt="설렘 아이콘" width="43" height="43"/>
+                            </div>
+                            <p class="record-icon-p">설레요</p>
+                        </div>
+                        <div class="record-icon-con">
+                            <div class="record-icon">
+                                <img src="./asset/icon/moving/icon5/icon5_000.png" alt="행복 아이콘" width="43" height="43"/>
+                            </div>
+                            <p class="record-icon-p">행복해</p>
+                        </div>
+                    </div>
+                    <div class="record-now-con">
+                        <div class="record-now-area">
+                            <div class="record-now-icon-con">
+                                <div class="record-now-icon">
+                                    <img src="./asset/icon/moving/icon0/icon0_000.png" alt="현재 아이콘" width="73" height="73"/>
+                                </div>
+                                <div class="record-now-icon-shadow">그림자</div>
+                            </div>
+                            <p class="record-now-degree"><span class="record-now-degree-percent">50%</span> <span class="record-now-degree-emo">화나요</span></p>
+                        </div>
+                    </div>
+                    <div class="record-slider-con">
+                        <div class="record-slider-area">
+                            <input class="record-slider" type="range" min="0" max="100" value="50"/>
+                            <!-- <div class="record-silder-bar"></div> -->
+                        </div>
+                        <div class="record-value-con">
+                            <p class="record-now-value">조금</p>
+                            <p class="record-now-value">매우</p>
+                        </div>
+                    </div>
+                    <div class="record-text-con">
+                        <p class="record-text-title">간단한 감정일기를 입력하세요</p>
+                        <textarea class="record-text-input outInput" name="content" cols="35" rows="2" size="50" maxlength="50" spellcheck="false">내용을 입력해주세요</textarea>
+                        <p class="record-text-limit"><span>0</span>/50자</p>
+                    </div>
+                    <button class="record-record-btn">기록하기</button>
+                </article>
+            </section>
+            <section class="custom-section outVisible">
+                <article class="custom-area">
+                    <button class="custom-exit-btn">
+                        <div class="custom-exit-el"></div>
+                        <div class="custom-exit-el"></div>
+                    </button>
+                    <h3 class="custom-area-title"><span>감정</span>을 커스텀해요</h3>
+                    <div class="custom-choose-con">
+                        <div class="custom-icon-con">
+                            <div class="custom-icon custom-icon-selected">
+                                <img src="./asset/icon/moving/icon0/icon0_000.png" alt="화남 아이콘" width="43" height="43"/>
+                            </div>
+                            <p class="custom-icon-p custom-icon-p-selected">화나요</p>
+                        </div>
+                        <div class="custom-icon-con">
+                            <div class="custom-icon">
+                                <img src="./asset/icon/moving/icon1/icon1_000.png" alt="우울 아이콘" width="43" height="43"/>
+                            </div>
+                            <p class="custom-icon-p">우울해</p>
+                        </div>
+                        <div class="custom-icon-con">
+                            <div class="custom-icon">
+                                <img src="./asset/icon/moving/icon2/icon2_000.png" alt="슬픔 아이콘" width="43" height="43"/>
+                            </div>
+                            <p class="custom-icon-p">슬퍼요</p>
+                        </div>
+                        <div class="custom-icon-con">
+                            <div class="custom-icon">
+                                <img src="./asset/icon/moving/icon3/icon3_000.png" alt="기쁨 아이콘" width="43" height="43"/>
+                            </div>
+                            <p class="custom-icon-p">기뻐요</p>
+                        </div>
+                        <div class="custom-icon-con">
+                            <div class="custom-icon">
+                                <img src="./asset/icon/moving/icon4/icon4_000.png" alt="설렘 아이콘" width="43" height="43"/>
+                            </div>
+                            <p class="custom-icon-p">설레요</p>
+                        </div>
+                        <div class="custom-icon-con">
+                            <div class="custom-icon">
+                                <img src="./asset/icon/moving/icon5/icon5_000.png" alt="행복 아이콘" width="43" height="43"/>
+                            </div>
+                            <p class="custom-icon-p">행복해</p>
+                        </div>
+                    </div>
+                    <div class="custom-now-con">
+                        <div class="custom-now-area">
+                            <div class="custom-now-icon-con">
+                                <div class="custom-now-icon">
+                                    <img src="./asset/icon/moving/icon0/icon0_000.png" alt="현재 아이콘" width="73" height="73"/>
+                                </div>
+                                <div class="custom-now-icon-shadow">그림자</div>
+                            </div>
+                            <button class="custom-reset-btn">원래대로</button>
+                        </div>
+                    </div>
+                    <!--색상 선택 팔레트-->
+                    <div class="custom-pallet-con">
+                        <p class="custom-pallet-title">커스텀 팔레트</p>
+                        <div class="custom-hue-section custom-pallet-section">
+                            <p class="custom-hue-title">색상</p>
+                            <input class="hue-value" type="number" name="hue_value" min="0" value="356" max="360" size="360">
+                            <div class="custom-hue-area custom-s-area">
+                                <img src="./asset/pallet/pallet01.png" alt="색상팔레트" width="" height=""/>
+                                <div class="custom-hue-bar custom-bar"></div>
+                            </div>
+                        </div>
+                        <div class="custom-saturate-section custom-pallet-section">
+                            <p class="custom-saturate-title">채도</p>
+                            <input class="saturate-value" type="number" name="saturate_value" value="94" min="0" max="100" size="100">
+                            <div class="custom-saturate-area custom-s-area">
+                                <div class="custom-saturate-overlay"></div>
+                                <div class="custom-saturate-bar custom-bar"></div>
+                            </div>
+                        </div>
+                        <div class="custom-brightness-section custom-pallet-section">
+                            <p class="custom-brightness-title">명도</p>
+                            <input class="brightness-value" type="number" name="brightness_value" value="64" min="0" max="100" size="100">
+                            <div class="custom-brightness-area custom-s-area">
+                                <div class="custom-brightness-overlay01"></div>
+                                <div class="custom-brightness-overlay02"></div>
+                                <div class="custom-brightness-bar custom-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <section class="setting-section  outVisible">
+                <article class="setting-area">
+                    <button class="setting-exit-btn">
+                        <div class="setting-exit-el"></div>
+                        <div class="setting-exit-el"></div>
+                    </button>
+                    <p class="setting-area-title">설정</p>
+                    <button class="setting-reset-first">초기화</button>
+                    <div class="setting-reset-last-con outVisible">
+                        <button class="setting-reset-last">네</button>
+                        <button class="setting-reset-no">아니오</button>
+                    </div>
+                    <p class="setting-area-version">ver 1.0</p>
+                </article>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
