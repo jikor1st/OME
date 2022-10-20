@@ -2,7 +2,7 @@
 
 감정 기록 웹 - ver.01
 
-[ DEMO ] : https://jikor1st.github.io/OME
+site : https://jikor1st.github.io/OME
 
 ### 로컬 스토리지를 통한 기록
 
